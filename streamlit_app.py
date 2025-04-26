@@ -42,9 +42,14 @@ with st.sidebar:
   input_penguins = pd.concat([input_df, x], axis = 0)
 
 with st.expander('Input features'):
-  st.write('**Input penguin')
+  st.write('**Input penguin**')
   input_df
   st.write('**Combined penguins data**')
   input_penguins
+
+# encode
+encode = ['island', 'sex']
+df_penguins = pd.get_dummies(input_dummies, prefix = encode)
+df_penguins[:1]
   
 
